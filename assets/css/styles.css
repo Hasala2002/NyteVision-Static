@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --primary-color: #070a1b;
+    --secondary-color: #040614;
+    --font-main: #fff;
+    --font-sub: #68f3a8;
+    --font-invert: #070a1b;
+    --font-notify: rgb(167, 167, 167);
+    --background-image: url('/assets/img/password.jpg');
+}
+
+[data-theme="dark"] {
+    --primary-color: #eee;
+    --secondary-color: #ddd;
+    --font-main: #070a1b;
+    --font-sub: #00b074;
+    --font-invert: #070a1b;
+    --font-notify: #292727;
+    --background-image: url('/assets/img/password.jpg');
+}
+
+a {
+    text-decoration: none;
+    user-select: none;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0, 15px);
+    }
+    100% {
+      transform: translate(0, 0px);
+    }
+  }
+  line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 50s linear alternate infinite;
+    /* animation-fill-mode: forwards; */
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 10000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  @keyframes background-animation {
+    from{
+      background-position-x: 0%;
+    }
+    to{
+      background-position-x: 100%;
+    }
+  }
+
+  .material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: "liga";
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: var(--primary-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--font-sub);
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+  }
+ .navbar {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .navbarTitle {
+    color: var(--font-sub);
+    font-size: 1.8em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+ .titleHalf {
+    color: var(--font-main);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+  .navitems {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+ .navitem {
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: var(--font-main);
+  }
+  .navitem:hover {
+    border-bottom: 3px solid var(--font-main);
+  }
+ .switch {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .switch:hover {
+    border: none;
+    color: var(--font-sub);
+    cursor: pointer;
+  }
+  .switch .material-icons {
+    font-size: 1.5em;
+  }
+  .signUp {
+    width: 20%;
+  }
+  .signUp .getSt {
+    background-color: var(--font-sub);
+    color: var(--font-invert);
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .signUp .getSt:hover {
+    background-color: unset;
+    box-shadow: inset 0 0 0 3px var(--font-sub);
+    color: var(--font-sub);
+    border-bottom: none;
+  }
+  .scrolled {
+    background-color: var(--secondary-color);
+  }
+  .webpage {
+    position: relative;
+    width: 100%;
+    height: 85%;
+  }
+  .wrapper-sm {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  .page {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutpage {
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .infoTitle{
+    color: var(--font-main);
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .profilePic{
+    width: 4vw; height: 4vw;
+    overflow: hidden;
+    border-radius: 2vw;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .dp{
+    width: 100%;
+    height: 100%;
+  }
+ .hero {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    align-items: unset;
+  }
+ .svgarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.75;
+  }
+  .pagehalf {
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: unset;
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+  }
+  .mainTitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2.75em;
+    color: var(--font-main);
+  }
+  .mainTitle-sm {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2.5em;
+    color: var(--font-main);
+  }
+  .green {
+    color: var(--font-sub);
+  }
+  .subTitle {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--font-main);
+  }
+ .learnMo {
+    width: fit-content;
+    background-color: var(--font-sub);
+    color: var(--font-invert);
+    font-size: 1em;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+ .learnMo:hover {
+    background-color: unset;
+    box-shadow: inset 0 0 0 3px var(--font-sub);
+    color: var(--font-sub);
+  }
+.notification {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--font-notify);
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    align-items: center;
+  }
+.info {
+    color: var(--font-notify);
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+  .imagehalf {
+    padding: 0;
+  }
+  .laptopPng {
+    width: 100%;
+    height: auto;
+    animation: floating 3s infinite ease-in-out;
+  }
+  .supportPng {
+    width: auto;
+    height: 80%;
+    animation: floating 3s infinite ease-in-out;
+  }
+  .menuIcon{
+    display: none;
+  }
+
+  .respNav{
+    position: absolute;
+    height: 100vh;
+    width: 50vw;
+    background-color: var(--secondary-color);
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    display: none;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+  }
+
+  .bgImgLoader{background-image: url("/assets/img/bg-light.png"); display: none;}
+
+  .respInfo{display: none;}
+
+  #contact{
+    background-image: url("/assets/img/bg.png");
+    background-size: 25% auto; 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  #contact.pagehalf{padding: 2.5%;}
+
+  form{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    color: var(--font-main);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    justify-content: space-evenly;
+  }
+
+  .formset{
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,textarea{
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--font-main);
+    font-size: 0.9em;
+    height: 100%;
+    width: 80%;
+    border: none;
+    padding: 2%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    border-radius: 5px 5px 0 0 ;
+  }
+  
+  input:focus, textarea:focus{
+    border-bottom: 3px solid var(--font-sub);
+  }
+  
+  button{outline: none;border: none; border-radius: 5px !important;}
+  textarea{
+    border: none;
+    resize: none;
+    padding: 2%;
+  }
+  .formhalf{padding: 3.5%;}
+  .mesg{height: 30%;}
+
+  #services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5%;
+  }
+
+  #services .flexcontainer{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .service-card{
+    width: 15%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5% 1%;
+    position: relative;
+    background-color: var(--secondary-color);
+    border-bottom: 3px solid var(--font-sub);
+  }
+
+  .service-card::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    opacity: 0.1;
+  }
+
+  .service-card:hover::before{
+    animation: background-animation 7.5s linear infinite alternate !important;
+  }
+
+  .service-card:nth-child(1)::before{
+    background: url('/assets/img/password.jpg');
+    background-position-x: 0%;
+  }
+  .service-card:nth-child(2)::before{
+    background: url('/assets/img/fingerprint.jpg');
+    background-position-x: 0%;
+    background-size: auto 100%;
+  }
+  .service-card:nth-child(3)::before{
+    background: url('/assets/img/creditcard.jpg');
+    background-position-x: 0%;
+    background-size: auto 100%;
+  }
+  .service-card:nth-child(4)::before{
+    background: url('/assets/img/integration.png');
+    background-position-x: 0%;
+  }
+  .service-card:nth-child(5)::before{
+    background: url('/assets/img/encryption.jpg');
+    background-position-x: 0%;
+  }
+  .service-card:nth-child(6)::before{
+    background: url('/assets/img/customerservice.jpg');
+    background-position-x: 0%;
+  }
+
+  .service-icon {
+    color: var(--font-sub);
+    font-size: 3em !important;
+    /* background: var(--primary-color); */
+    user-select: none;
+  }
+
+  .card-title{
+    width: 100%;
+    height: fit-content;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .cardTitle-sm {
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.25em;
+    text-align: center;
+    color: var(--font-main);
+  }
+
+  .service-card-btn {
+    width: fit-content;
+    background-color: var(--font-sub);
+    color: var(--font-invert);
+    font-size: 1em;
+    padding: 7.5px 22.5px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .modal-wrapper{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .modal{
+    width: 60%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 30;
+  }
+
+  .modal-service-card{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5% 1%;
+    position: relative;
+    background-color: var(--secondary-color);
+    border-bottom: 3px solid var(--font-sub);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+  }
+
+  .modal-service-card::before{
+    background-image: var(--background-image);
+    background-position-x: 0%;
+    background-size: auto 100%;
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    opacity: 0.05;
+    animation: background-animation 10s linear infinite alternate !important;
+  }
+
+  .modal-description-card{
+    width: 70%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    padding: 4% 0 0 0;
+    position: relative;
+    background-color: var(--primary-color);
+    border-radius: 0 10px 10px 0;
+  }
+
+  .modal-description-title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    color: var(--font-main);
+    margin-left: 4%;
+  }
+
+  .modal-description-card p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--font-main);
+    width: 100%;
+    padding: 4%;
+    background-color: var(--secondary-color);
+    flex: 1;
+  }
+
+  .modal-description-card i{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    margin-left: 4%;
+    color: var(--font-main);
+  }
+
+  @media only screen and (max-width: 600px) {
+   .navbar{justify-content:space-between; padding-left:5%; padding-right: 5%; height: 10%;}
+   .webpage{height: 90%}
+   .respNav{display: flex;}
+   .navitems,.signUp{display: none;width: 100%; height: 30%;}
+   .menuOffIcon{width: 100%;display: flex;justify-content:center; align-items: center;}
+   .resp{display: flex; flex-direction: column;}
+   .page{flex-direction: column-reverse;}
+   .pagehalf{width:100%;height: 50%;align-items: center;}
+   .txthalf{height: 62.5%}
+   .imagehalf{height: 37.5%}
+   .mainTitle{font-size: 2em;text-align: center;}
+   .mainTitle-sm{font-size: 1.3em;text-align: center;}
+   .subTitle{font-size: 0.9em;text-align: center;}
+   .notification{font-size: 0.75em;}
+   .laptopPng{height: 100%; width: auto;}
+   .menuIcon{display: unset;}
+   .infoTitle{font-size: 0.8em; padding: 0; width: 25%;}
+   .profilePic{width: 15vw; height: 15vw; border-radius: 7.5vw;  padding: 0;}
+   .aboutpage{justify-content: space-evenly;}
+   .respInfo{display: unset;}
+   .mainInfo{display: none;}
+   #contact{flex-direction: column-reverse;background-size: 75% auto; }
+   #services{padding: 7.5% 2.5% 2.5% 2.5%;}
+   .formhalf{height: 77.5%}
+   .formImg{height: 22.5%;}
+   input,textarea{width: 100%;}
+   button{padding: 5px 15px !important;align-self: center;}
+   #services .flexcontainer{flex-direction: column; justify-content: space-evenly;}
+   .service-card{width: 80%; height: 12.5%; flex-direction: row; padding: 1% 2.5%;}
+   .card-title{width: 25%;}
+   .cardTitle-sm{display: none;}
+   .service-card-btn{padding: 5px 15px !important; font-size: 0.9em;}
+   .service-card::before{background-size: 100% auto !important;}
+   .modal{flex-direction: column; width: 100%;}
+   .modal-service-card{width: 90%; height: 12.5%; flex-direction: row; padding: 1% 2.5%;}
+   .modal-service-card::before{background-size: 100% auto !important;}
+   .modal-description-card{  width: 90%; border-radius: 0px; }
+  }
