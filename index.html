@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <script defer src="/assets/js/app.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/assets/img/Group 1.png"/>
 </head>
 <body>
     <section class="modal-wrapper" id="modal-wrapper">
         <div class="modal">
         <div class="modal-service-card" id="modal-service-card">
             <span class="card-title">
-            <i class="material-icons-outlined service-icon" id="modal-service-icon">pattern</i>
+            <i class="material-icons service-icon" id="modal-service-icon">pattern</i>
             <span class="cardTitle-sm" id="modal-service-title">Something you know</span>
             </span>
-            <button class="learnMo service-card-btn" id="modal-wrapper-close"><i class="material-icons-outlined">close</i></button>
+            <button class="learnMo service-card-btn" id="modal-wrapper-close"><i class="material-icons">close</i></button>
         </div>
         <div class="modal-description-card">
             <span class="modal-description-title" id="modal-description-title">Passwords</span>
@@ -30,32 +30,32 @@
     <div class="bgImgLoader"></div>
     <div class="wrapper">
         <nav class="navbar" id="navbar">
-            <span class="navbarTitle">Nyte<span class="titleHalf">Vision</span></span>
+            <span class="navbarTitle" onclick="navTo('home')">Nyte<span class="titleHalf">Vision</span></span>
             <div class="navitems">
-                <a href="#home" class="navitem">Home</a>
-                <a href="#downloads" class="navitem">Downloads</a>
-                <a href="#services" class="navitem">Services</a>
-                <a href="#contact" class="navitem">Support</a>
+                <a onclick="navTo('home')" class="navitem">Home</a>
+                <a onclick="navTo('services')" class="navitem">Services</a>
+                <a onclick="navTo('downloads')" class="navitem">Downloads</a>
+                <a onclick="navTo('contact')" class="navitem">Support</a>
             </div>
             <div class="navitems signUp">
-                <div class="navitem">Login</div>
+                <div class="navitem" onclick="alert('Login Feature Coming Soon!')">Login</div>
                 <div class="navitem getSt">Get Started</div>
-                <div class="navitem switch"><i class="material-icons-outlined" id="toggleSwitch">light_mode</i></div>
+                <div class="navitem switch"><i class="material-icons" id="toggleSwitch">brightness_low</i></div>
             </div>
-            <span class="navbarTitle menuIcon"><i class="material-icons-outlined" id="menuBtn">notes</i></span>
+            <span class="navbarTitle menuIcon"><i class="material-icons" id="menuBtn">notes</i></span>
         </nav>
         <nav class="respNav" id="respNav">
-            <span class="navbarTitle menuOffIcon"><i class="material-icons-outlined" id="menuOffBtn">legend_toggle</i></span>
+            <span class="navbarTitle menuOffIcon"><i class="material-icons" id="menuOffBtn">legend_toggle</i></span>
             <div class="navitems resp">
                 <a onclick="navTo('home')" class="navitem">Home</a>
-                <a onclick="navTo('downloads')" class="navitem">Downloads</a>
                 <a onclick="navTo('services')" class="navitem">Services</a>
+                <a onclick="navTo('downloads')" class="navitem">Downloads</a>
                 <a onclick="navTo('contact')" class="navitem">Support</a>
             </div>
             <div class="navitems signUp resp">
-                <div class="navitem">Login</div>
-                <div class="navitem getSt">Get Started</div>
-                <div class="navitem switch"><i class="material-icons-outlined" id="toggleSwitchResp">light_mode</i></div>
+                <div class="navitem" onclick="alert('Login Feature Coming Soon!')">Login</div>
+                <div class="navitem getSt" onclick="navTo('downloads')">Get Started</div>
+                <div class="navitem switch"><i class="material-icons" id="toggleSwitchResp">brightness_low</i></div>
             </div>
         </nav>
         <div class="webpage">
@@ -86,59 +86,91 @@
                 <div class="pagehalf txthalf">
                     <span class="mainTitle">Cyber Security<br>at its <span class="green">finest</span></span>
                     <span class="subTitle">Secure and optmize your devices to meet industrial standards.</span>
-                    <span class="learnMo">Learn More</span>
-                    <span class="notification"><i class="material-icons-outlined info">info</i>New features to be announced!</span>
+                    <span class="learnMo" onclick="navTo('services')">Learn More</span>
+                    <span class="notification"><i class="material-icons info">info</i>New features to be announced!</span>
                 </div>
                 <div class="pagehalf imagehalf">
                     <img class="laptopPng" src="/assets/img/lap.png" alt="laptop">
                 </div>
-            </section>
-            <section class="page" id="downloads">
             </section>
             <section id="services" class="page">
                 <span class="mainTitle-sm">Why choose <span class="green">Nyte</span>Vision...?</span>
                 <div class="flexcontainer">
                     <div class="service-card">
                         <span class="card-title">
-                        <i class="material-icons-outlined service-icon">pattern</i>
+                        <i class="material-icons service-icon">vpn_key</i>
                         <span class="cardTitle-sm">Something you know</span>
                         </span>
                         <button class="learnMo service-card-btn" data-service="password" onclick="openModal(event)">Learn More</button>
                     </div>
                     <div class="service-card">
                         <span class="card-title">
-                        <i class="material-icons-outlined service-icon">fingerprint</i>
+                        <i class="material-icons service-icon">fingerprint</i>
                         <span class="cardTitle-sm">Something you are</span>
                         </span>
                         <button class="learnMo service-card-btn" data-service="fingerprint" onclick="openModal(event)">Learn More</button>
                     </div>
                     <div class="service-card">
                         <span class="card-title">
-                        <i class="material-icons-outlined service-icon">credit_card</i>
+                        <i class="material-icons service-icon">credit_card</i>
                         <span class="cardTitle-sm">Something you have</span>
                         </span>
                         <button class="learnMo service-card-btn" data-service="creditcard" onclick="openModal(event)">Learn More</button>
                     </div>
                     <div class="service-card">
                         <span class="card-title">
-                        <i class="material-icons-outlined service-icon">integration_instructions</i>
+                        <i class="material-icons service-icon">integration_instructions</i>
                         <span class="cardTitle-sm">Anything you have</span>
                         </span>
                         <button class="learnMo service-card-btn" data-service="integration" onclick="openModal(event)">Learn More</button>
                     </div>
                     <div class="service-card">
                         <span class="card-title">
-                        <i class="material-icons-outlined service-icon">enhanced_encryption</i>
+                        <i class="material-icons service-icon">enhanced_encryption</i>
                         <span class="cardTitle-sm">Only you can</span>
                         </span>
                         <button class="learnMo service-card-btn" data-service="encryption" onclick="openModal(event)">Learn More</button>
                     </div>
                     <div class="service-card">
                         <span class="card-title">
-                        <i class="material-icons-outlined service-icon">support_agent</i>
+                        <i class="material-icons service-icon">support_agent</i>
                         <span class="cardTitle-sm">Anytime you can</span>
                         </span>
                         <button class="learnMo service-card-btn" data-service="customerservice" onclick="openModal(event)">Learn More</button>
+                    </div>
+                </div>
+            </section>
+            <section class="page downloads" id="downloads">
+                <div class="pagehalf txthalf">
+                    <span class="mainTitle">Get the<br>NyteAuth <span class="green">Now!</span></span>
+                    <span class="subTitle">Order the brand new NyteAuth multi-purpose biometrics scanner. <span class="green">On sale right now!</span></span>
+                    <span class="learnMo">Order Now</span>
+                </div>
+                <div class="pagehalf flipcard-half">
+                    <div class="flipcard">
+                        <div class="card-controls">
+                            <i class="material-icons control-icons" onclick="rotate('before')">navigate_before</i>
+                                <div class="trackers">
+                                    <i class="material-icons tracker-icons" onclick="trackerClick(event)" id="tracker_(-360)">radio_button_unchecked</i>
+                                    <i class="material-icons tracker-icons" onclick="trackerClick(event)" id="tracker_(-180)">radio_button_unchecked</i>
+                                    <i class="material-icons tracker-icons" onclick="trackerClick(event)" id="tracker_(0)">radio_button_checked</i>
+                                    <i class="material-icons tracker-icons" onclick="trackerClick(event)" id="tracker_(180)">radio_button_unchecked</i>
+                                    <i class="material-icons tracker-icons" onclick="trackerClick(event)" id="tracker_(360)">radio_button_unchecked</i>
+                                </div>
+                            <i class="material-icons control-icons" onclick="rotate('next')">navigate_next</i>
+                        </div>
+                        <div class="card-container" id="card">
+                        <div class="fc-front" id="fc-front">
+                            <span class="mainTitle gradientAnimText">Windows</span>
+                            <img src="/assets/img/os_logo/Windows-logo.png" alt="" class="osLogo">
+                            <button class="learnMo service-card-btn">Download Now</button>
+                        </div>
+                        <div class="fc-back" id="fc-back">
+                            <span class="mainTitle gradientAnimText">Mac OS</span>
+                            <img src="/assets/img/os_logo/Apple-logo.png" alt="" class="osLogo">
+                            <button class="learnMo service-card-btn">Download Now</button>                         
+                        </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -168,8 +200,8 @@
                 </div>
             </section>
             <section id="about" class="aboutpage">
-                <span class="infoTitle mainInfo">Website built by Hasala Heiyanthuduwa</span>
-                <span class="infoTitle respInfo">Hasala Heiyanthuduwa</span>
+                <span class="infoTitle mainInfo">Website built by <a href="https://hasala2002.netlify.app">Hasala Heiyanthuduwa</a></span>
+                <a href="https://hasala2002.netlify.app" class="infoTitle respInfo">Hasala Heiyanthuduwa</a>
                 <span class="profilePic">
                     <img class="dp" src="/assets/img/hasala.jpg" alt="logo">
                 </span>

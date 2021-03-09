@@ -1,5 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@font-face {
+  font-family: 'Material Icons Outlined';
+  src: url('../icons/MaterialIconsOutlined-Regular.woff2') format('woff2'),
+      url('../icons/MaterialIconsOutlined-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff2') format('woff2'),
+      url('../fonts/Poppins-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
+      url('../fonts/Poppins-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Medium.woff2') format('woff2'),
+      url('../fonts/Poppins-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 :root{
     --primary-color: #070a1b;
@@ -12,8 +46,8 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #eee;
-    --secondary-color: #ddd;
+    --primary-color: #f1f1f1;
+    --secondary-color: #f8f8f8;
     --font-main: #070a1b;
     --font-sub: #00b074;
     --font-invert: #070a1b;
@@ -41,7 +75,6 @@ a {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: dash 50s linear alternate infinite;
-    /* animation-fill-mode: forwards; */
   }
   
   @keyframes dash {
@@ -66,25 +99,21 @@ a {
   }
 
   .material-icons {
-    font-family: "Material Icons";
+    font-family: "Material Icons Outlined";
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
-    /* Preferred icon size */
     display: inline-block;
     line-height: 1;
+    /* the below css properties come with Material Icons font by default  - Hasala*/
     text-transform: none;
     letter-spacing: normal;
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-    /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-    /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-    /* Support for IE. */
     font-feature-settings: "liga";
   }
   
@@ -118,7 +147,7 @@ a {
   }
  .navbar {
     width: 100%;
-    height: 15%;
+    height: 12.5%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -129,6 +158,7 @@ a {
     font-size: 1.8em;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    cursor: pointer;
   }
  .titleHalf {
     color: var(--font-main);
@@ -191,7 +221,7 @@ a {
   .webpage {
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 87.5%;
   }
   .wrapper-sm {
     width: 100%;
@@ -606,7 +636,113 @@ a {
     color: var(--font-main);
   }
 
-  @media only screen and (max-width: 600px) {
+  .downloads{
+      position: relative;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: unset;
+      align-items: unset;
+  }
+
+  .flipcard-half{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .flipcard{
+    width: 90%;
+    height: 80%;
+    position: relative;
+  }
+
+  .card-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+.fc-front,.fc-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-image: linear-gradient(to top,var(--secondary-color) 0%, var(--primary-color));
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-controls{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.control-icons{
+  color: var(--font-main);
+  font-size: 3em;
+  user-select: none;
+  cursor: pointer;
+}
+
+.tracker-icons{
+  color: var(--font-notify);
+  font-size: 1em;
+  user-select: none;
+  cursor: pointer;
+}
+
+.fc-back{
+  transform: rotateY(180deg);
+}
+
+.trackers{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.osLogo {
+  width: auto;
+  height: 30%;
+  animation: floating 3s infinite ease-in-out;
+}
+
+.gradientAnimText {
+  background: linear-gradient(to right, #667eea 20%, #764ba2 30%, #764ba2 70%, #667eea 80%);
+  /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 7s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+
+  @media only screen and (max-width: 1000px) {
    .navbar{justify-content:space-between; padding-left:5%; padding-right: 5%; height: 10%;}
    .webpage{height: 90%}
    .respNav{display: flex;}
@@ -624,7 +760,7 @@ a {
    .laptopPng{height: 100%; width: auto;}
    .menuIcon{display: unset;}
    .infoTitle{font-size: 0.8em; padding: 0; width: 25%;}
-   .profilePic{width: 15vw; height: 15vw; border-radius: 7.5vw;  padding: 0;}
+   .profilePic{width: 10vh; height: 10vh; border-radius: 5vh;  padding: 0;}
    .aboutpage{justify-content: space-evenly;}
    .respInfo{display: unset;}
    .mainInfo{display: none;}
@@ -644,4 +780,5 @@ a {
    .modal-service-card{width: 90%; height: 12.5%; flex-direction: row; padding: 1% 2.5%;}
    .modal-service-card::before{background-size: 100% auto !important;}
    .modal-description-card{  width: 90%; border-radius: 0px; }
+   .flipcard{height: 100%;}
   }

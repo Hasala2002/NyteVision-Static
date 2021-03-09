@@ -2,7 +2,7 @@ var services = {
     password:{
         title: "Something you know",
         image: "password.jpg",
-        icon: "pattern",
+        icon: "vpn_key",
         descTitle: "Passwords",
         word: "noun",
         phonetics: "/ˈpɑːswəːd/",
@@ -23,17 +23,17 @@ var services = {
         icon: "credit_card",
         descTitle: "Authenticators",
         word: "noun",
-        phonetics: "/ˈpɑːswəːd/",
-        description:"The first division of the NyteVision's revolutionary Three Factor Authentication System, our integrated system will and manage all passwords and authentication PINs from all your various accounts and store them in higly encrypted servers. Avoid the hassle of trying to remember easy to guess passwords, and safekeep your accounts from bruteforce hackers."
+        phonetics: "/ô-thĕn′tĭ-kāt′/",
+        description:"The last but not least, division of the NyteVision's revolutionary Three Factor Authentication System, NyteVision users have the opportunity and choice use physical authentication devices for specific accounts, this add a another layer of security your accounts and electronic devices. These devices have been designed, both phsically and technologically, to maximize your efficieny while not losing the secure environment you gain from it"
     },
     integration:{
         title: "Anything you have",
         image: "integration.png",
         icon: "integration_instructions",
-        descTitle: "Multi-Platform Software",
-        word: "noun",
-        phonetics: "/ˈpɑːswəːd/",
-        description:"The first division of the NyteVision's revolutionary Three Factor Authentication System, our integrated system will and manage all passwords and authentication PINs from all your various accounts and store them in higly encrypted servers. Avoid the hassle of trying to remember easy to guess passwords, and safekeep your accounts from bruteforce hackers."
+        descTitle: "Cross-Platform Software",
+        word: "adjective",
+        phonetics: "/ˌkrɒs ˈplætfɔːm/",
+        description:"Nytevision is integrated to supoort all major software, operating systems including but not limited to Microsoft, Mac, Linux and Android. All these devices will work in tandem with reach other, providing a fast paced workflow able which in addition allows you to create secure channels to transfer data between said devices."
     },
     encryption:{
         title: "Only you can",
@@ -42,7 +42,7 @@ var services = {
         descTitle: "Encryption",
         word: "noun",
         phonetics: "/ˈpɑːswəːd/",
-        description:"The first division of the NyteVision's revolutionary Three Factor Authentication System, our integrated system will and manage all passwords and authentication PINs from all your various accounts and store them in higly encrypted servers. Avoid the hassle of trying to remember easy to guess passwords, and safekeep your accounts from bruteforce hackers."
+        description:"Many mainstream messenger apps might use some sort of encryption methods, but Nytevision takes things step further by a new revolutionary and novel technology know as pre-compiled encrytion that allows the user to encrypt data even before it passes through to the used app. As an added bonus this also allows users to use this method in apps and programs that lack this encryption as well. Your privacy is our priority"
     },
     customerservice:{
         title: "Anytime you can",
@@ -53,6 +53,39 @@ var services = {
         phonetics: "/ˈpɑːswəːd/",
         description:"The first division of the NyteVision's revolutionary Three Factor Authentication System, our integrated system will and manage all passwords and authentication PINs from all your various accounts and store them in higly encrypted servers. Avoid the hassle of trying to remember easy to guess passwords, and safekeep your accounts from bruteforce hackers."
     }
+}
+
+var OSInstall = {
+    ['-360']:{
+        title: 'Linux',
+        image: 'Linux-logo.png',
+        buttonText: 'Open Snapstore',
+        card:'front'
+    },
+    ['-180']:{
+        title: 'Android',
+        image: 'Android-logo.png',
+        buttonText: 'Open Playstore',
+        card:'back'
+    },
+    ['0']:{
+        title: 'Windows',
+        image: 'Windows-logo.png',
+        buttonText: 'Download Now',
+        card:'front'
+    },
+    ['180']:{
+        title: 'Mac OS',
+        image: 'Apple-logo.png',
+        buttonText: 'Download Now',
+        card:'back'
+    },
+    ['360']:{
+        title: 'Chrome OS',
+        image: 'Chrome-logo.png',
+        buttonText: 'Open Webstore',
+        card:'front'
+    },
 }
 
 let navbar = document.getElementById('navbar')
@@ -74,6 +107,9 @@ let modalDescTitle = document.getElementById('modal-description-title')
 let modalDescPhon = document.getElementById('modal-description-phonetics')
 let modalDescPara = document.getElementById('modal-description-para')
 
+let card = document.getElementById('card')
+
+card.style.transform = 'rotateY(0deg)'
 
 scrollable.onscroll = function () { 
     "use strict";
@@ -89,28 +125,28 @@ respNav.style.transform= 'translateX(50%) rotateY(90deg) skew(15deg)'
 modalWrapper.style.display = 'none'
 
 toggleSwitch.addEventListener('click',()=>{
-    if(toggleSwitch.textContent === "light_mode"){
-        toggleSwitch.textContent = "dark_mode"
-        toggleSwitchResp.textContent = "dark_mode"
+    if(toggleSwitch.textContent === "brightness_low"){
+        toggleSwitch.textContent = "brightness_medium"
+        toggleSwitchResp.textContent = "brightness_medium"
         document.documentElement.setAttribute('data-theme', 'dark');
         contact.style.backgroundImage = "url('/assets/img/bg-light.png')"
     }else{
-        toggleSwitch.textContent = "light_mode"
-        toggleSwitchResp.textContent = "light_mode"
+        toggleSwitch.textContent = "brightness_low"
+        toggleSwitchResp.textContent = "brightness_low"
         document.documentElement.setAttribute('data-theme', 'light');
         contact.style.backgroundImage = "url('/assets/img/bg.png')"
     }
 })
 
 toggleSwitchResp.addEventListener('click',()=>{
-    if(toggleSwitch.textContent === "light_mode"){
-        toggleSwitch.textContent = "dark_mode"
-        toggleSwitchResp.textContent = "dark_mode"
+    if(toggleSwitch.textContent === "brightness_low"){
+        toggleSwitch.textContent = "brightness_medium"
+        toggleSwitchResp.textContent = "brightness_medium"
         document.documentElement.setAttribute('data-theme', 'dark');
         contact.style.backgroundImage = "url('/assets/img/bg-light.png')"
     }else{
-        toggleSwitch.textContent = "light_mode"
-        toggleSwitchResp.textContent = "light_mode"
+        toggleSwitch.textContent = "brightness_low"
+        toggleSwitchResp.textContent = "brightness_low"
         document.documentElement.setAttribute('data-theme', 'light');
         contact.style.backgroundImage = "url('/assets/img/bg.png')"
     }
@@ -153,4 +189,45 @@ window.onclick = function(event) {
     if (event.target == modalWrapper) {
       modalWrapper.style.display = "none";
     }
+  }
+
+
+  function rotate(direction){
+    let rotation =  card.style.transform
+    let currentRotatationValue = (((rotation.match(/\((.*)\)/))[1]).split('d'))[0]
+    if(direction==="next" && parseInt(currentRotatationValue)<360){
+        let rotationValue = parseInt(currentRotatationValue) + 180
+        card.style.transform = `rotateY(${rotationValue}deg)`
+        tracker(rotationValue)
+        setFlipcardData(rotationValue)
+        }else if(direction==="before" && parseInt(currentRotatationValue)>-360){
+        let rotationValue = parseInt(currentRotatationValue) - 180
+        card.style.transform = `rotateY(${rotationValue}deg)`
+        tracker(rotationValue)
+        setFlipcardData(rotationValue)
+    }
+  }
+
+  function tracker(rotationValue){
+    let sections = [-360,-180,0,180,360]
+    sections = sections.filter((n)=>{return n !== rotationValue})
+    document.getElementById(`tracker_(${rotationValue})`).textContent = 'radio_button_checked'
+    sections.map((trackno)=>{
+        document.getElementById(`tracker_(${trackno})`).textContent = 'radio_button_unchecked'
+    })
+  }
+
+  function trackerClick(e){
+    let currentRotatationValue = ((e.target.id).match(/\((.*)\)/))[1]
+    card.style.transform = `rotateY(${currentRotatationValue}deg)`
+    tracker(parseInt(currentRotatationValue))
+    setFlipcardData(currentRotatationValue)
+  }
+
+  function setFlipcardData(index){
+      let data =  OSInstall[index]
+      let elem = document.getElementById(`fc-${data.card}`)
+        elem.children[0].textContent = data.title
+        elem.children[1].src = `/assets/img/os_logo/${data.image}`
+        elem.children[2].textContent = data.buttonText
   }
